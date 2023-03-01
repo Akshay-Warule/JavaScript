@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="a1"></p>
+    <p id="a2"></p>
+    <p id="a3"></p>
+    <p id="a4"></p>
+    <p id="a5"></p>
+    <p id="a6"></p>
+    <p id="a7"></p>
+    <p id="a8"></p>
+    <script>
+        var arr=["apple","orange","peru","gava","papai"]
+
+        document.getElementById("a1").innerHTML=arr[4];//papai
+        arr.pop();//remove last element papai
+        document.getElementById("a2").innerHTML=arr.join("#")//apple#orange#peru#gava
+
+         arr.push("mango");// added element in last
+
+        document.getElementById("a3").innerHTML=arr.join("*");//apple*orange*peru*gava*mango
+        arr.shift();// remove first ele
+        document.getElementById("a4").innerHTML=arr.join("$")//orange$peru$gava$mango       apple get removed
+
+        arr.unshift("Grapes");//added at first
+        document.getElementById("a5").innerHTML=arr.join("%")//Grapes%orange%peru%gava%mango
+
+        delete arr[1];//delete orange
+        document.getElementById("a6").innerHTML=arr.join("@")//Grapes@@peru@gava@mango
+
+        arr.splice(2,0,"banana","chery")
+        document.getElementById("a7").innerHTML=arr.join("^")//Grapes^^banana^chery^peru^gava^mango
+
+    </script>
+</body>
+</html>
